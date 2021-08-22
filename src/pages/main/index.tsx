@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import Input from "../../components/atoms/input";
 import Container from "../../components/container";
-import Footer from "../../components/organisms/footer";
 import Header from "../../components/organisms/header";
 import TodoGroup from "../../components/organisms/todoGroup";
 import { LOCAL_STORAGE_NAME } from "../../config";
