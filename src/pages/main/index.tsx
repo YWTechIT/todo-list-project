@@ -1,13 +1,15 @@
 import { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import Input from "../../components/atoms/input";
 import Container from "../../components/container";
+import Footer from "../../components/organisms/footer";
+import Header from "../../components/organisms/header";
 import TodoGroup from "../../components/organisms/todoGroup";
+import { LOCAL_STORAGE_NAME } from "../../config";
 import { TodoTypes } from "../../types";
 
 const Main = () => {
   const [todos, setTodos] = useState<TodoTypes[]>([]);
-  const LOCAL_STORAGE_NAME = "todos";
-
+  
   const onInsert = useCallback(
     (title: string) => {
       const newTodo = {
@@ -15,7 +17,6 @@ const Main = () => {
         title: title,
         checked: false,
       };
-
       setTodos(todos.concat(newTodo));
     },
     [todos]
@@ -49,12 +50,10 @@ const Main = () => {
 
   return (
     <Container>
+      <Header />
       <Input onInsert={onInsert}></Input>
-      <TodoGroup
-        todos={todos}
-        onRemove={onRemove}
-        isChecked={isChecked}
-      ></TodoGroup>
+      <TodoGroup todos={todos} onRemove={onRemove} isChecked={isChecked}></TodoGroup>
+      
     </Container>
   );
 };
