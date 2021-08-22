@@ -9,6 +9,7 @@ const ContainerWrapper = styled.main`
     flex-direction: column;
     align-items: center;
     margin: 64px auto;
+    min-width: 200px;
 `
 
 const Container = ({children}: ContainerProps) => <ContainerWrapper>{children}</ContainerWrapper>
