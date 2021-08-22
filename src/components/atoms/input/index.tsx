@@ -13,7 +13,7 @@ const Input = ({onInsert}: InputProps) => {
 
   const onSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onInsert(title);
+    !!title.trim() && onInsert(title.trim());
     setTitle("");
   }, [onInsert, title])
  
