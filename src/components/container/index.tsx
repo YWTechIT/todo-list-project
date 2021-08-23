@@ -10,6 +10,7 @@ const ContainerWrapper = styled.main`
     align-items: center;
     margin: 64px auto;
     min-width: 200px;
+    width: 768px;
 `
 
 const Container = ({children}: ContainerProps) => <ContainerWrapper>{children}</ContainerWrapper>

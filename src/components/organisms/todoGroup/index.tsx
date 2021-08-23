@@ -12,7 +12,7 @@ interface Todos {
 
 const TodoGroupWrapper = styled.article`
   width: 512px;
-  border: 2px solid #3d8ddc;
+  border: 2px solid ${(props) => props.theme.borderColor};
   margin: 32px 0px;
   padding: 8px;
   border-radius: 5px;

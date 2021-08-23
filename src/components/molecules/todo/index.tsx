@@ -28,7 +28,7 @@ const CheckedStyle = styled.input`
   display: inline;
 `
 
-const TextStyle = styled.section<TextProps>`
+const TextStyle = styled.span<TextProps>`
   display: inline;
   margin-left: 8px;
   text-decoration: ${(props) => props.checked && "line-through"};
@@ -38,7 +38,7 @@ const TextStyle = styled.section<TextProps>`
 const Todo = ({ todo, onRemove, isChecked }: TodoProps) => {
   return (
     <TodoStyle>
-      <label>
+      <label id={todo.id}>
         <li id={todo.id}>
           <CheckedStyle type="checkbox" onClick={() => isChecked(todo.id)}/>
           <TextStyle checked={todo.checked}>{todo.title}</TextStyle>
