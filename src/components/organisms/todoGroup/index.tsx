@@ -1,8 +1,6 @@
 import { TodoTypes } from "../../../types";
-import Todo from "../../molecules/todo";
-import styled from "styled-components";
-import Footer from "../footer";
-import { Ol } from "../../../typhography/ol";
+import {Todo, Footer} from "../../index";
+import {TodoGroupWrapper} from "./style";
 
 interface Todos {
   todos: TodoTypes[];
@@ -10,23 +8,14 @@ interface Todos {
   isChecked: (id: string) => void;
 }
 
-const TodoGroupWrapper = styled.article`
-  width: 512px;
-  border: 2px solid ${(props) => props.theme.borderColor};
-  margin: 32px 0px;
-  padding: 8px;
-  border-radius: 5px;
-  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
-`;
-
 const TodoGroup = ({ todos, onRemove, isChecked }: Todos) => {
   return (
     <TodoGroupWrapper>
-      <Ol>
+      <ol>
         {todos.map((todo) => (
           <Todo key={todo.id} todo={todo} onRemove={onRemove} isChecked={isChecked}></Todo>
         ))}
-      </Ol>
+      </ol>
       <Footer todos={todos} />
     </TodoGroupWrapper>
   );
