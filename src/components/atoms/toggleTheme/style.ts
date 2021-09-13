@@ -6,7 +6,6 @@ interface ToggleContainerProps{
 
 export const ToggleContainer = styled.button<ToggleContainerProps>`
     display: flex;
-    /* justify-content: space-between; */
     background: ${(props) => props.theme.gradient};
     border: 2px solid ${(props) => props.theme.toggleBorder};
     border-radius: 30px;

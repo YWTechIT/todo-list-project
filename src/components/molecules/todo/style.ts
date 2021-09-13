@@ -9,14 +9,13 @@ export const ButtonStyle = styled.button`
     height: 24px;
     font-size: 16px;
     margin-left: 8px;
-    border: 1.5px solid #fee6d5;
+    border: 1px solid #6B8096;
     background-color: white;
     font-weight: bold;
     border-radius: 12px;
-    color: #ff9c7e;
     cursor: pointer;
     &:hover {
-        background-color: #f9ede5;
+        background-color: #c3ccd5;
     }
 `;
 

@@ -4,5 +4,5 @@ export const NavBarWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   background-color: ${(props) => props.theme.bgColor};
-  padding: 12px 12px;
+  padding: 12px 16px;
 `;
