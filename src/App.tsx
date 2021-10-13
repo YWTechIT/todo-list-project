@@ -1,11 +1,18 @@
 import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./globalStyles";
+import useDarkMode from "./hooks/useDarkMode";
 import Main from "./pages/main";
-import { theme } from "./typhography/theme";
+import { darkTheme, lightTheme } from "./typhography/theme";
 
 const App = () => {
+  const [theme, toggleTheme] = useDarkMode();
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
+  const isLight = theme === "light" ? "light" : "dark";
+  
   return (
-    <ThemeProvider theme={theme}>
-      <Main /> 
+    <ThemeProvider theme={themeMode}>
+      <GlobalStyle/>
+      <Main isLight={isLight} toggleTheme={toggleTheme} />
     </ThemeProvider>
   )
 }

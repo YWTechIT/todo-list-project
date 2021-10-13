@@ -1,17 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import { InputStyle } from "./style";
 
 interface InputProps{
   onInsert: (title: string) => void;
 }
-
-const InputStyle = styled.input`
-  width: 256px;
-  height: 24px;
-  font-size: 16px;
-  border: 1px solid ${(props) => props.theme.borderColor};
-  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
-`
 
 const Input = ({onInsert}: InputProps) => {
   const [title, setTitle] = useState<string>("");
